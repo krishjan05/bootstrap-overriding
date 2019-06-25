@@ -1,27 +1,35 @@
-# BootstrapOverride
+# bootstrap-override
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+This project demonstrate the process of overriding bootstrap variables to best suite your theme and design system.
 
-## Development server
+# Environment
+- Operating System: Windows 10
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Prerequisite
+- Node 10.9+
+- Node Package Manager
+- Angular CLI 8.0+
+- Visual studio Code
+- Knowledge of SCSS
 
-## Code scaffolding
+# Steps
+- Create a new angular application using following command:
+`ng new <name of the project>`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Press "y" when "Would you like to add Angular routing? (y/N)?" question is asked.
 
-## Build
+- Select "SCSS" when "Which stylesheet format would you like to use? (Use arrow keys)" question is asked.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- This will create an angular project for you with scss as the css pre-processor
 
-## Running unit tests
+- Add Bootstrap: You can install bootstrap by following instruction in blog: https://medium.com/@krishjan05/bootstrap-4-0-and-angular-8-6111056b4700, perform all the steps after step 4
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Open style.scss file and import scss file of bootstrap using following statement:
+`@import "node_modules/bootstrap/scss/bootstrap";`
 
-## Running end-to-end tests
+- To override default variables use the following statements before importing bootstrap scss(before step 5):
+`$body-bg: #000;
+$body-color: #111;`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- When you run the application using the following command you see that the background color of the application is blue as compared to the default white:
+`ng serve`
